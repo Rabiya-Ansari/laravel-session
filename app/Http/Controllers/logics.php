@@ -6,6 +6,21 @@ use Illuminate\Http\Request;
 
 class logics extends Controller
 {
+
+    public function getStudents()
+    {
+        $students = [
+            ["name" => "Aisha", "email" => "aisha@gmail.com"],
+            ["name" => "Rabiya", "email" => "rabiya@gmail.com"],
+            ["name" => "Ali", "email" => "ali@gmail.com"],
+            ["name" => "Usama", "email" => "usama@gmail.com"],
+            ["name" => "Sameer", "email" => "sameer@gmail.com"],
+            ["name" => "Fahad", "email" => "fahad@gmail.com"],
+        ];
+
+        return view("students", compact("students"));
+    }
+
     public function productsData()
     {
 

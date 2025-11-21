@@ -15,4 +15,10 @@ Route::get('/about',function(){
  return view('about');
 });
 
+Route::get("/directive",function(){
+return view("directive");
+});
+
+Route::get("/students",[logics::class,"getStudents"]);
+
 Route::get("/cards", [logics::class,"productsData"]);

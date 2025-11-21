@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Cards</title>
     <style>
+        /* .container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        } */
         .cards {
             display: flex;
             justify-content: space-between;
@@ -29,10 +34,9 @@
         }
 
         .card-img img {
-            width: 100%;
+        
             height: 200px;
-            object-fit: contain;
-            margin-bottom: 10px;
+           
         }
 
         .card-title {
@@ -59,7 +63,6 @@
 
     <div class="container">
         <h1>Our Products</h1>
-
         @foreach ($products as $Product)
 
                 <div class="cards">
