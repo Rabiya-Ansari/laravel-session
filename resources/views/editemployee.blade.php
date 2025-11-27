@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Employee</title>
+    <title>Edit Employee</title>
 
     <style>
         body {
@@ -17,10 +17,10 @@
             height: 100vh;
         }
 
-        .add {
-            width: 400px;
+        .edit {
             background: white;
-            padding: 30px 25px;
+            padding: 30px;
+            width: 380px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             animation: fadeIn 0.4s ease;
@@ -28,33 +28,26 @@
 
         h1 {
             text-align: center;
+            margin-bottom: 25px;
             font-size: 24px;
             color: #333;
-            margin-bottom: 25px;
         }
 
         input[type="text"],
-        input[type="email"],
-        textarea {
+        input[type="email"] {
             width: 100%;
             padding: 12px;
             margin-bottom: 15px;
-            border-radius: 8px;
             border: 1px solid #ccc;
+            border-radius: 8px;
             font-size: 15px;
             transition: 0.3s;
-            resize: none;
         }
 
         input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus {
+        input[type="email"]:focus {
             border-color: #4A90E2;
             box-shadow: 0 0 6px rgba(74, 144, 226, 0.4);
-        }
-
-        textarea {
-            height: 80px;
         }
 
         input[type="submit"] {
@@ -62,9 +55,9 @@
             padding: 12px;
             background: #4A90E2;
             color: white;
-            font-size: 16px;
             border: none;
             border-radius: 8px;
+            font-size: 16px;
             cursor: pointer;
             transition: 0.3s;
         }
@@ -81,19 +74,17 @@
 </head>
 
 <body>
+    <div class="edit">
+        <h1>Edit Employee</h1>
 
-    <div class="add">
-        <h1>Add Employee</h1>
-
-        <form action="/addemployee" method="POST">
+        <form action="/editingemployee/{{ $data['id'] }}" method="POST">
             @csrf
-            <input type="text" name="name" placeholder="Name here.." required>
-            <input type="email" name="email" placeholder="Email here.." required>
-            <textarea name="message" placeholder="Message here.."></textarea>
+            <input type="text" name="name" placeholder="Name here" value="{{ $data['emp_name'] }}">
+            <input type="email" name="email" placeholder="Email here" value="{{ $data['emp_email'] }}">
+            <input type="text" name="message" placeholder="Message here" value="{{ $data['emp_message'] }}">
 
-            <input type="submit" value="Add Employee">
+            <input type="submit" value="Update">
         </form>
     </div>
-
 </body>
 </html>

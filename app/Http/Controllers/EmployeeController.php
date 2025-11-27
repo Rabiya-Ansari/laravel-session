@@ -23,4 +23,23 @@ class EmployeeController extends Controller
         $data = $emp::all();
         return view("getEmployee",compact("data"));
     }
+
+    public function editEmployee($id){
+        $emp = new Employee();
+        $data = $emp::find($id);
+
+        return view("editemployee", compact("data"));
+    }
+
+        public function editingEmployee(Request $req, $id){
+        $emp = Employee::find($id);
+
+        $emp->emp_name = $req->name;
+        $emp->emp_email = $req->email;
+        $emp->emp_message = $req->message;
+
+        $emp->save();
+
+        return redirect("/getemployee");
+    }
 }
