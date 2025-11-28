@@ -67,6 +67,14 @@
         td a:nth-child(2):hover {
             background: #c93a3a;
         }
+
+        .more-add {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 20px;
+            padding-right: 150px;
+            text-decoration: none;
+        }
     </style>
 </head>
 
