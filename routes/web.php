@@ -37,3 +37,4 @@ Route::post('/addemployee', [EmployeeController::class, "addEmployee"]);
 
 Route::get('/editemployee/{id}', [EmployeeController::class, "editEmployee"]);
 Route::post('/editingemployee/{id}', [EmployeeController::class, "editingEmployee"]);
+Route::get('/deleteemployee/{id}', [EmployeeController::class, "deleteEmployee"]);

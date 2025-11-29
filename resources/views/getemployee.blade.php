@@ -99,7 +99,7 @@
                 <td>{{ $value['emp_message'] }}</td>
                 <td>
                     <a href="editemployee/{{ $value['id'] }}">Edit</a>
-                    <a href="#">Delete</a>
+                    <a href="deleteemployee/{{ $value['id'] }}">Delete</a>
                 </td>
 
             </tr>
